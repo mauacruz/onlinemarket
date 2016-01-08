@@ -28,8 +28,13 @@ class Module
     public function onDispatch(MvcEvent $e)	
     {
 	$viewModel = $e->getViewModel();
+
+	/* $categories = $e->getApplication()->getServiceManager()->getService('categories'); */
+        /* $categories = array("item 1", "item 2"); */
+
 	$viewModel->setVariable('categories', 'CATEGORY LIST');
 
+	
 
     }
 
