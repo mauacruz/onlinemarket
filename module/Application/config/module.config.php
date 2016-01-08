@@ -65,7 +65,7 @@ return array(
   				  'computer', 'entertainment', 'free',
 				  'garden', 'general', 'health', 'household',
 				  'phones', 'property', 'sporting', 'tools',
-				  'transportation', 'wanted') ,
+				  'transportation', 'wanted',) ,
 	),
     ),
     'translator' => array(

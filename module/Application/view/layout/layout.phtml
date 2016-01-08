@@ -47,9 +47,7 @@
             
 	    <div class="leftcol">	
 		<?php 
-	           /*$cat = $this->categories;*/
-		   /*echo	$this->htmlList($cat);*/
-			echo $this->categories;
+   		   echo $this->htmlList($this->categories);
                 ?>
 	    </div>
 	    <div class="rightcol">	
@@ -58,7 +56,8 @@
 
             <hr>
             <footer>
-                <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+                <p>&copy; 2005 - <?php 
+                     echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>
