@@ -44,7 +44,7 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'ZendSkeletonModule' => __DIR__ . '/../view',
+            'Market' => __DIR__ . '/../view',
         ),
     ),
 );
