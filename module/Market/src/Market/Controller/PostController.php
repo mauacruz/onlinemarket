@@ -3,7 +3,7 @@
 namespace Market\Controller;
 	
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Helper\ViewModel;
+use Zend\View\Model\ViewModel;
 
 class PostController extends AbstractActionController
 {
@@ -16,9 +16,7 @@ class PostController extends AbstractActionController
 	
 	public function indexAction()
 	{
-		return new ViewModel(
-				array("categories" => $this->categories)
-				);
+		return new ViewModel(array('categories' => $this->categories));
 	}
 		
 }
