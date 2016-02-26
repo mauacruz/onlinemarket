@@ -23,8 +23,47 @@ return array(
         				'action' => 'index'
         			)
         		)
-        	),        		
+        	), 
+	    'market-view' => array(
+                            'type' => 'Literal',
+                            'options' => array (
+                                 'route' => '/market/view',
+                                 'defaults' => array(
+                                      'controller' => 'market-view_controller',
+                                      'action' => 'index'
+                                 )
+                             ),
+                            'may-terminate' => true,
+			    'child-routes' => array(
+				 'type' => 'Segment',
+				 'options' => array(
+				        'route' => '/main[/:category]',
+					 
+				 )
+                            )
+                        ),
             'market' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/market',
+                    'defaults' => array(  
+                          'controller' => 'market-index-controller',
+                          'action' => 'index'
+                    )
+                )
+            ),
+            'market-post' => array(
+	        'type' => 'Literal',
+                'options' => array(
+                   'route' => '/market/post',
+		   'defaults' => array(
+    			'controller' => 'market-post-controller',
+        		'action' => 'index'
+                   )
+                )
+            ),
+
+          /*  'market' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     // Change this to something specific to your module
@@ -56,7 +95,9 @@ return array(
                         ),
                     ),
                 ),
+            
             ),
+        */  
         ),
     ),
     'view_manager' => array(
