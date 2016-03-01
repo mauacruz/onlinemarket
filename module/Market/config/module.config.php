@@ -24,24 +24,43 @@ return array(
         			)
         		)
         	), 
-	    'market-view' => array(
-                            'type' => 'Literal',
-                            'options' => array (
-                                 'route' => '/market/view',
-                                 'defaults' => array(
-                                      'controller' => 'market-view_controller',
-                                      'action' => 'index'
-                                 )
-                             ),
-                            'may-terminate' => true,
+	   		'market-view' => array(
+            	'type' => 'Literal',
+                'options' => array (
+                   	'route' => '/market/view',
+                    'defaults' => array(
+                    	'controller' => 'market-view-controller',
+                        'action' => 'index'
+                    ),
+                ),
+                'may-terminate' => true,
+	   				
 			    'child-routes' => array(
-				 'type' => 'Segment',
-				 'options' => array(
-				        'route' => '/main[/:category]',
-					 
-				 )
-                            )
-                        ),
+			    		
+			    	'index' => array(	
+						'type' => 'Segment',
+					 	'options' => array(
+						    'route' => '/main[/:category]',
+					 		'defaults' => array(
+					 			'action'     => 'index'
+					 		),				 			
+						),
+			    	),
+			    		
+			    	'item' => array(
+			    		'type' => 'Segment',
+			    		'options' => array(
+			    			'route' => '/item[/:itemId]',
+			    			'defaults' => array(
+			    				'action' => 'item'		
+			    			),
+			    			'constraints' => array(
+			    				'itemId' => '[0-9]*'
+			    			)
+			    		),
+			    	),			
+            	),
+            ),
             'market' => array(
                 'type' => 'Literal',
                 'options' => array(
@@ -56,7 +75,7 @@ return array(
 	        'type' => 'Literal',
                 'options' => array(
                    'route' => '/market/post',
-		   'defaults' => array(
+		    'defaults' => array(
     			'controller' => 'market-post-controller',
         		'action' => 'index'
                    )
