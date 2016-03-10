@@ -72,7 +72,17 @@ return array(
 			    						'itemId' => '[0-9]*'
 			    					)
 			    				)
-			    			)	
+			    			),
+			    			'slash' => array(
+		    					'type' => 'Literal',
+		    					'options' => array(
+	    							'route' => '/',
+	    							'defaults' => array(
+	    									'controller' => 'market-view-controller',
+	    									'action' => 'index'
+	    							)
+		    					),
+			    			)
             			)
 					),
 		    		'post' => array(
@@ -83,8 +93,33 @@ return array(
 			    				'controller' => 'market-post-controller',
 		    					'action ' => 'index'
 		    				)
-		    			)
-					)
+		    			
+						),
+				    	'may_terminate' => true,
+				    		
+			    		'child_routes' => array(
+			   				'slash' => array(
+								'type' => 'Literal',
+								'options' => array(
+									'route' => '/',
+				    				'defaults' => array(
+				    					'controller' => 'market-post-controller',
+				    					'action' => 'index'	
+				    				)
+				    			),
+			    			)	
+				    	)
+		    		),
+		    		'slash' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+    						'route' => '/',
+    						'defaults' => array(
+    								'controller' => 'market-index-controller',
+    								'action' => 'index'
+    						)
+	    				),
+		    		)
 			    )
             )
         )
