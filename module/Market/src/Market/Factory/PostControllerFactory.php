@@ -1,5 +1,4 @@
 <?php
-
 namespace Market\Factory;
 
 use Zend\ServiceManager\FactoryInterface;
@@ -15,6 +14,7 @@ class PostControllerFactory implements FactoryInterface
 		
 		$postController = new \Market\Controller\PostController();
 		$postController->setCategories($categories);
+		$postController->setPostForm($sm->get('market-post-form'));
 		
 		return $postController;
 	}
