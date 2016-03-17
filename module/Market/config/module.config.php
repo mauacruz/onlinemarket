@@ -130,7 +130,16 @@ return array(
 			'market-post-form' 		=> 'Market\Factory\PostFormFactory',
 			'market-post-filter' 	=> 'Market\Factory\PostFilterFactory'	
 				
-		)
+		),
+		'services' => array(
+			'expireDays' => array('15/03/2016', '30/03/2016', '15/04/2016',
+			) ,
+			'captchaOptions' => array('e3r4', 'zx34', '7n0m',
+			) ,
+				
+				
+		),
+				
 	),
 			
     'view_manager' => array(

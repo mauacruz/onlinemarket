@@ -1,25 +1,22 @@
 <?php
-
 namespace Market\Factory;
-
+use Market\Form\PostForm;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use Market\Form\PostForm;
-
 class PostFormFactory implements FactoryInterface
 {
 	public function createService(ServiceLocatorInterface $sm)
 	{
-			
-		$categories = $sm->get('categories');
-		
+		/*
+		* Isto é um exemplo de como realizar a configurações do formulário,
+		* O importante é registrar o campos do formulário pedidos no exercícios
+		*/
 		$form = new PostForm();
-		$form->setCategories($categories);
-		$form->buildForm();
-		
+		$form->setCategories($sm->get('categories'));
+		$form->setExpireDays($sm->get('expireDays'));
+		$form->setCaptchaOptions($sm->get('captchaOptions'));
 		$form->setInputFilter($sm->get('market-post-filter'));
-		
+		$form->buildForm();
 		return $form;
-		
 	}
 }
