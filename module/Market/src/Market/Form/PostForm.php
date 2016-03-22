@@ -96,7 +96,15 @@ class PostForm extends Form
 		$captchaAdapter = new ImageCaptcha();
 		$captchaAdapter->setWordlen(4)
 			  		   ->setOptions($this->captchaOptions)
-					   ->setOption('font', '/fonts/arial.ttf');
+					   ->setOption('font',  '/data/fonts/arial.ttf')
+					   ->setOption('imgDir', '/public/captcha/')
+					   ->setOption('imgUrl', '/public/captcha/')
+					   ->setOption('fontSize', 50)
+					   ->setOption('height', 100)
+					   ->setOption('width', 200)
+					   ->setOption('dotNoiseLevel' , 40)
+                       ->setOption('lineNoiseLevel', 6)	
+		;
 		
 		$captcha->setCaptcha($captchaAdapter)
 				->setLabel('Help us to prevent SPAM!')
