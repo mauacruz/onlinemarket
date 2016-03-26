@@ -96,9 +96,12 @@ class PostForm extends Form
 		$captchaAdapter = new ImageCaptcha();
 		$captchaAdapter->setWordlen(4)
 			  		   ->setOptions($this->captchaOptions)
-					   ->setOption('font',  '/data/fonts/arial.ttf')
-					   ->setOption('imgDir', '/public/captcha/')
-					   ->setOption('imgUrl', '/public/captcha/')
+					 //  ->setOption('font',  '/data/fonts/arial.ttf')
+					   ->setOption('font',  __DIR__ .'/../../../../../data/fonts/arial.ttf')
+					   
+					   //->setOption('imgDir', '/public/captcha/')
+					   ->setOption('imgDir', __DIR__ .'/../../../../../public/captcha')
+					   ->setOption('imgUrl', '/captcha/')
 					   ->setOption('fontSize', 50)
 					   ->setOption('height', 100)
 					   ->setOption('width', 200)

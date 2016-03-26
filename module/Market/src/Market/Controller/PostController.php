@@ -9,6 +9,8 @@ use Zend\View\Model\Zend\View\Model;
 
 class PostController extends AbstractActionController
 {
+	use ListingsTableTrait;
+	
 	private $postForm;
 	public  $categories;
 	

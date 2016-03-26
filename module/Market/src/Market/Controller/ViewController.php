@@ -8,6 +8,7 @@
 	class ViewController extends AbstractActionController
 	{
 
+		use ListingsTableTrait;
 		public function indexAction()
 		{
 			$category = $this->params()->fromRoute("category");

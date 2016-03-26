@@ -8,8 +8,8 @@ use Zend\Db\Adapter\Adapter;
 
 class ListingsTable extends TableGateway
 {
-	public $tableName = 'listings';
-	public $listingsId = 'listings_id';
+	public static $tableName = 'listings';
+	public static $listingsId = 'listings_id';
 	
 	// key = form field; value = column name
 	protected $searchFormMappings = array(
