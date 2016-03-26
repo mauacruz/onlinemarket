@@ -4,7 +4,7 @@ namespace Market\Factory;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class ViewControllerFactory implements FactoryInterface
+class IndexControllerFactory implements FactoryInterface
 {
 	public function createService(ServiceLocatorInterface $controllerManager)
 	{
@@ -12,9 +12,9 @@ class ViewControllerFactory implements FactoryInterface
 		$sm = $allServices->get('ServiceManager');
 		$categories = $sm->get('categories');
 		
-		$viewController = new \Market\Controller\ViewController();
+		$indexController = new \Market\Controller\IndexController();
 		
-		$viewController->setListingsTrable($sm->get('listings-table'));
-		return $viewController;
+		$indexController->setListingsTrable($sm->get('listings-table'));
+		return $indexController;
 	}
 }
