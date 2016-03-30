@@ -3,7 +3,7 @@ namespace Market\Factory;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use Search\Model\ListingsTable;
+use Market\Model\ListingsTable;
 
 class ListingsTableFactory implements FactoryInterface {
 	

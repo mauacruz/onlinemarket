@@ -14,7 +14,7 @@ class ViewControllerFactory implements FactoryInterface
 		
 		$viewController = new \Market\Controller\ViewController();
 		
-		$viewController->setListingsTrable($sm->get('listings-table'));
+		$viewController->setListingsTable($sm->get('listings-table'));
 		return $viewController;
 	}
 }

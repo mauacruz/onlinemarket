@@ -5,8 +5,8 @@ trait ListingsTableTrait{
 	
 	private $listingsTable;
 	
-	public function setListingsTrable($listingsTrable) {
+	public function setListingsTable($listingsTable) {
 		
-		$this->listingsTable = $listingsTrable;
+		$this->listingsTable = $listingsTable;
 	}
 }

@@ -14,7 +14,7 @@ class IndexControllerFactory implements FactoryInterface
 		
 		$indexController = new \Market\Controller\IndexController();
 		
-		$indexController->setListingsTrable($sm->get('listings-table'));
+		$indexController->setListingsTable($sm->get('listings-table'));
 		return $indexController;
 	}
 }
