@@ -13,6 +13,7 @@
 		{
 			$category = $this->params()->fromRoute("category");
 			//return new ViewModel(array('category'=>'CATEGORY POSTINGS'));
+			
 			$listings = $this->listingsTable->getListingsByCategory($category);
 			
 			return new ViewModel(array('category'=> $category, 'list'=>$listings));
