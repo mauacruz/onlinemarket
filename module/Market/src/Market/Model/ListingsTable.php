@@ -30,9 +30,9 @@ class ListingsTable extends TableGateway{
 	}
 	
 	public function addPosting($data){
-		list($city, $country) = explode(",", $dta['cityCode']);
+		list($city, $country) = explode(",", $data['cityCode']);
 		$data['city'] = trim($city);
-		$data['contry'] = trimg($contry);
+		$data['country'] = trim($country);
 		
 		$date = new \DateTime();
 
